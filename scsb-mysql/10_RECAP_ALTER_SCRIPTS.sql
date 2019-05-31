@@ -1,8 +1,7 @@
 USE `recap` ;
 
--- Script for Release 1.2.9 start here
+-- Script for Release 1.3.2 starts here
 
-alter table `recap`.`request_item_t` drop column `is_gfa_status_sch`;
-UPDATE `recap`.`request_item_status_t` SET `REQUEST_STATUS_CODE`='LAS_REFILE_REQUEST_PLACED', `REQUEST_STATUS_DESC`='LAS REFILE REQUEST PLACED' WHERE `REQUEST_STATUS_CODE`='REQUESTS_PLACED_ON_SCH';
+UPDATE `recap`.`customer_code_t` SET `DESCRIPTION`='Reid Hall (Paris, France)' WHERE `customer_code`='MZ';
 
--- Script for Release 1.2.9 ends
+-- Script for Release 1.3.2 ends here
