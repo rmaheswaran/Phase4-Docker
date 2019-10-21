@@ -50,9 +50,6 @@
             <policyMap>
                 <policyEntries>
                     <policyEntry queue="lasOutgoingQ" >
-                        <slowConsumerStrategy>
-                            <abortSlowAckConsumerStrategy ignoreNetworkConsumers="false" ignoreIdleConsumers="false" maxTimeSinceLastAck="300000" />
-                        </slowConsumerStrategy>
                     </policyEntry>
                     <policyEntry topic=">">
                         <!-- The constantPendingMessageLimitStrategy is used to prevent
