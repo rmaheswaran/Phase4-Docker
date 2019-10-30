@@ -51,7 +51,7 @@
                 <policyEntries>
                     <policyEntry queue="lasOutgoingQ" >
                         <slowConsumerStrategy>	
-                          <abortSlowAckConsumerStrategy ignoreNetworkConsumers="false" ignoreIdleConsumers="false" maxTimeSinceLastAck="420000" />	
+                          <abortSlowAckConsumerStrategy ignoreNetworkConsumers="false" ignoreIdleConsumers="false" maxTimeSinceLastAck="120000" />	
                         </slowConsumerStrategy>
                     </policyEntry>
                     <policyEntry topic=">">
@@ -127,7 +127,7 @@
             <transportConnector name="amqp"
                                 uri="amqp://0.0.0.0:5672?maximumConnections=1000&amp;wireFormat.maxFrameSize=max_frame_size"/>
             <transportConnector name="stomp"
-                                uri="stomp://0.0.0.0:61613?maximumConnections=1000&amp;wireFormat.maxFrameSize=max_frame_size&amp;transport.hbGracePeriodMultiplier=1.5"/>
+                                uri="stomp://0.0.0.0:61613?maximumConnections=1000&amp;wireFormat.maxFrameSize=max_frame_size"/>
             <transportConnector name="mqtt"
                                 uri="mqtt://0.0.0.0:1883?maximumConnections=1000&amp;wireFormat.maxFrameSize=max_frame_size"/>
             <transportConnector name="ws"
