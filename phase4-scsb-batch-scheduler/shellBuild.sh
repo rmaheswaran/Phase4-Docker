@@ -20,6 +20,6 @@ fi
 pwd
 ./gradlew clean build -x test
 
-ln -s $PROJ_DIR_TAG/build/libs/scsb-batch-scheduler-0.0.1-SNAPSHOT.jar /etc/init.d/phase4-scsb-batch-scheduler
+ln -s $PROJ_DIR_TAG/build/libs/phase4-scsb-batch-scheduler-0.0.1-SNAPSHOT.jar /etc/init.d/phase4-scsb-batch-scheduler
 cp $PROJ_DIR_TAG/build/libs/phase4-scsb-batch-scheduler-0.0.1-SNAPSHOT.jar /opt
 
