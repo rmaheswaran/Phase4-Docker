@@ -1,7 +1,7 @@
 
 echo "Parameter = $1"
-PROJ_NAME="scsb-cas"
-PROJ_DIR="/opt/scsb-cas"
+PROJ_NAME="phase4-scsb-cas"
+PROJ_DIR="/opt/phase4-scsb-cas"
 PROJ_DIR_TAG=""
 VAR_SLASH="/"
 
@@ -12,7 +12,7 @@ mkdir $PROJ_NAME
 cd $PROJ_DIR
 
 # echo Cloning poject
-git clone https://github.com/ResearchCollectionsAndPreservation/scsb-cas.git
+git clone https://github.com/ResearchCollectionsAndPreservation/Phase4-SCSB-CAS.git
 
 # echo $PROJ_DIR_TAG
 cd $PROJ_DIR_TAG

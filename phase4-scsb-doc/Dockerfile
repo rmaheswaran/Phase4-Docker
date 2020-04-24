@@ -6,6 +6,4 @@ ENV envTag="$TAG"
 COPY shellBuild.sh /opt/
 RUN cd /opt && ls -l && ./shellBuild.sh ${envTag}
 
-EXPOSE 9094
-
-ENTRYPOINT java -jar -Denvironment=$ENV /opt/scsb-etl-0.0.1-SNAPSHOT.jar && bash
+ENTRYPOINT java -jar -Denvironment=$ENV /opt/phase4-scsb-doc-0.0.1-SNAPSHOT.jar && bash

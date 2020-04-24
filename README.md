@@ -86,11 +86,11 @@ docker build -t scsb-solr-server .
 ```sh
 docker run --name scsb-solr-server -v /data/solr-data:/var/data/solr -p 8983:8983 -d scsb-solr-server  
 ```
-### SCSB-CAS
+### PHASE4-SCSB-CAS
 SCSB-CAS image manages the configuration files for CAS Authentication
 
 #### To build the scsb-cas image :  
-Goto [scsb-cas](scsb-cas) and run the below command  
+Goto [phase4-scsb-cas](phase4-scsb-cas) and run the below command  
 ```sh
 docker build -t scsb-cas .  
 ```
@@ -139,45 +139,45 @@ docker build -t scsb-zookeerper .
 ```sh
 docker run --name scsb-zookeeper  -e "ZOO_MY_ID=?" -e "ZOO_SERVERS=server.1=? server.2=? server.3=?" -v ${MOUNT_DIR}/conf:/opt/scsb-zookeeper/conf -v ${MOUNT_DIR}/data:/opt/scsb-zookeeper/data -v ${MOUNT_DIR}/log:/opt/scsb-zookeeper/datalog  -p ${CLIENT_PORT} -p ${SYNC_PORT_1} -p ${SYNC_PORT_2} -d scsb-zookeeper  
 ```
-### SCSB
-This image is build from the scsb-base image.This image clones the [SCSB](https://github.com/ResearchCollectionsAndPreservation/scsb) github project and starts the application when a container is created.
+### PHASE4-SCSB-GATEWAY
+This image is build from the scsb-base image.This image clones the [PHASE4-SCSB-GATEWAY](https://github.com/ResearchCollectionsAndPreservation/Phase4-SCSB-Gateway) github project and starts the application when a container is created.
 
-#### To build the scsb image :  
-Goto [scsb](scsb) and run the below command :  
+#### To build the phase4-scsb-gateway image :  
+Goto [phase4-scsb-gateway](phase4-scsb-gateway) and run the below command :  
 ```sh
 docker build -t scsb .
 ```
-#### To run a scsb container :
+#### To run a phase4-scsb-gateway container :
 ```sh
 docker run --name scsb -v ${mountVolume}  -p ${port} -e "ENV=-XX:+HeapDumpOnOutOfMemoryError -Dspring.config.location=?  -Dorg.apache.activemq.SERIALIZABLE_PACKAGES="*"" -d scsb  
 ```
-### SCSB-SOLR-CLIENT
-This image is build from the scsb-base image.This image clones the [SCSB-CIRC-CLIENT](https://github.com/ResearchCollectionsAndPreservation/scsb-solr-client) github project and starts the application when a container is created.
-#### To build the scsb-solr-client image :  
-Goto [scsb-solr-client](scsb-solr-client) and run the below command :  
+### PHASE4-SCSB-DOC
+This image is build from the scsb-base image.This image clones the [PHASE4-SCSB-DOC](https://github.com/ResearchCollectionsAndPreservation/Phase4-SCSB-Doc) github project and starts the application when a container is created.
+#### To build the phase4-scsb-doc image :  
+Goto [phase4-scsb-doc](phase4-scsb-doc) and run the below command :  
 ```sh
 docker build -t scsb-solr-client .
 ```
-#### To run a scsb-solr-client container :
+#### To run a phase4-scsb-doc container :
 ```sh
 docker run --name scsb-solr-client --link scsb-activemq:activemq -v ${dataDir}  -p ${port} -e "ENV=-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/data/heapdumps/scsb-solr-client -Dorg.apache.activemq.SERIALIZABLE_PACKAGES="*" -Dspring.config.location=?" -d scsb-solr-client  
 ```
 
-### SCSB-CIRC
-This image is build from the scsb-base image.This image clones the [SCSB-CIRC](https://github.com/ResearchCollectionsAndPreservation/scsb-circ) github project and starts the application when a container is created.
-#### To build the scsb-circ image :  
-Goto [scsb-circ](scsb-circ) and run the below command :  
+### PHASE4-SCSB-CIRC
+This image is build from the scsb-base image.This image clones the [PHASE4-SCSB-CIRC](https://github.com/ResearchCollectionsAndPreservation/Phase4-SCSB-Circ) github project and starts the application when a container is created.
+#### To build the phase4-scsb-circ image :  
+Goto [phase4-scsb-circ](phase4-scsb-circ) and run the below command :  
 ```sh
 docker build -t scsb-circ .
 ```
-#### To run a scsb-circ container :
+#### To run a phase4-scsb-circ container :
 ```sh
 docker run --name scsb-circ --link scsb-mysql:mysql --link scsb-solr-client:scsb-solr-client --link scsb-activemq:activemq  -v ${dataDir}  -p ${port} -e "ENV=  -XX:+HeapDumpOnOutOfMemoryError  -Dorg.apache.activemq.SERIALIZABLE_PACKAGES="*" -Dspring.config.location=?" -d scsb-circ  
 ```
-### SCSB-ETL
-This image is build from the scsb-base image.This image clones the [SCSB-ETL](https://github.com/ResearchCollectionsAndPreservation/scsb-etl) github project and starts the application when a container is created.
-#### To build the scsb-etl image :  
-Goto [scsb-etl](scsb-etl) and run the below command :  
+### PHASE4-SCSB-ETL
+This image is build from the scsb-base image.This image clones the [PHASE4-SCSB-ETL](https://github.com/ResearchCollectionsAndPreservation/Phase4-SCSB-ETL) github project and starts the application when a container is created.
+#### To build the phase4-scsb-etl image :  
+Goto [phase4-scsb-etl](phase4-scsb-etl) and run the below command :  
 ```sh
 docker build -t scsb-etl .
 ```
@@ -185,22 +185,22 @@ docker build -t scsb-etl .
 ```sh
 docker run --name scsb-etl --link scsb-mysql:mysql -v ${pendingDir}  -p ${port} -e "ENV=-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/data/heapdumps/scsb-etl -Xmx4g -Xms256m -Dorg.apache.activemq.SERIALIZABLE_PACKAGES="*"  -Dspring.config.location=?" -d scsb-etl 
 ```
-### SCSB-SHIRO
-This image is build from the scsb-base image.This image clones the [SCSB-SHIRO](https://github.com/ResearchCollectionsAndPreservation/scsb-shiro) github project and starts the application when a container is created.
-#### To build the scsb-shiro image :  
-Goto [scsb-shiro](scsb-shiro) and run the below command :  
+### PHASE4-SCSB-AUTH
+This image is build from the scsb-base image.This image clones the [PHASE4-SCSB-AUTH](https://github.com/ResearchCollectionsAndPreservation/Phase4-SCSB-Auth) github project and starts the application when a container is created.
+#### To build the phase4-scsb-auth image :  
+Goto [phase4-scsb-auth](phase4-scsb-auth) and run the below command :  
 ```sh
 docker build -t scsb-shiro .
 ```
-#### To run a scsb-shiro container :
+#### To run a phase4-scsb-auth container :
 ```sh
 docker run --name scsb-shiro --link scsb-mysql:mysql -v ${mountdir}  -p ${port} -e "ENV=-XX:+HeapDumpOnOutOfMemoryError  -Dspring.config.location=?" -d scsb-shiro
 ```
 
-### SCSB-UI
-This image is build from the scsb-base image.This image clones the [SCSB-UI](https://github.com/ResearchCollectionsAndPreservation/scsb-ui) github project and starts the application when a container is created.
-#### To build the scsb-ui image :  
-Goto [scsb-etl](scsb-etl) and run the below command :  
+### PHASE4-SCSB-UI
+This image is build from the scsb-base image.This image clones the [PHASE4-SCSB-UI](https://github.com/ResearchCollectionsAndPreservation/Phase4-SCSB-UI) github project and starts the application when a container is created.
+#### To build the phasescsb-ui image :  
+Goto [phase4-scsb-ui](phase4-scsb-ui) and run the below command :  
 ```sh
 docker build -t scsb-ui .
 ```
@@ -229,14 +229,14 @@ cd /data
 #Type the below command,tt displays the password
 sudo tail jenkins/secrets/initialAdminPassword
 ```
-### SCSB-BATCH-SCHEDULER
-This image is build from the scsb-base image.This image clones the [SCSB-BATCH-SCHEDULER](https://github.com/ResearchCollectionsAndPreservation/scsb-batch-scheduler) github project and starts the application when a container is created.
-#### To build the scsb-batch-scheduler image :  
-Goto [scsb-batch-scheduler](scsb-batch-scheduler) and run the below command :  
+### PHASE4-SCSB-BATCH-SCHEDULER
+This image is build from the scsb-base image.This image clones the [PHASE4-SCSB-BATCH-SCHEDULER](https://github.com/ResearchCollectionsAndPreservation/Phase4-SCSB-Batch-Scheduler) github project and starts the application when a container is created.
+#### To build the phase4-scsb-batch-scheduler image :  
+Goto [phase4-scsb-batch-scheduler](phase4-scsb-batch-scheduler) and run the below command :  
 ```sh
 docker build -t scsb-batch-scheduler .
 ```
-#### To run a scsb-batch-scheduler container :
+#### To run a phase4-scsb-batch-scheduler container :
 ```sh
 docker run --name scsb-batch-scheduler --link scsb-mysql:mysql --link scsb-solr-client:scsb-solr-client --link scsb-circ:scsb-circ --link scsb-activemq:activemq -v ${mountVolume}  -p ${port} -e "ENV= -XX:+HeapDumpOnOutOfMemoryError -Dspring.config.location=?" -d scsb-batch-scheduler
 ```
