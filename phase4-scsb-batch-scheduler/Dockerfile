@@ -8,4 +8,4 @@ RUN cd /opt && ls -l && ./shellBuild.sh ${envTag}
 
 EXPOSE 9096
 
-ENTRYPOINT java -jar -Denvironment=$ENV /opt/scsb-batch-scheduler-0.0.1-SNAPSHOT.jar && bash
+ENTRYPOINT java -jar -Denvironment=$ENV /opt/phase4-scsb-batch-scheduler-0.0.1-SNAPSHOT.jar && bash
