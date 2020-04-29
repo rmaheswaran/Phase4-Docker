@@ -10,7 +10,7 @@ COPY env-container /opt/activemq/bin
 COPY config.sh /opt
 
 #Add Download MYSQL Driver
-RUN curl http://central.maven.org/maven2/mysql/mysql-connector-java/6.0.6/mysql-connector-java-6.0.6.jar -o /opt/activemq/lib/mysql-connector-java-6.0.6.jar
+RUN curl https://mvnrepository.com/artifact/mysql/mysql-connector-java/6.0.6/mysql-connector-java-6.0.6.jar -o /opt/activemq/lib/mysql-connector-java-6.0.6.jar
 
 ARG ENVVAR
 ENV envVar="$ENVVAR"
