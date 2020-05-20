@@ -28,7 +28,7 @@ pwd
 
 # echo Change permissions
 chmod -R 750 $PROJ_DIR_TAG \
-    && chmod 750 $PROJ_DIR_TAG/mvnw
+    && chmod 750 $PROJ_DIR_TAG/maven
 
 
 ./mvnw clean install -DskipTests=true
