@@ -28,10 +28,11 @@ pwd
 
 # echo Change permissions
 chmod -R 750 $PROJ_DIR_TAG \
-    && chmod 750 $PROJ_DIR_TAG/mvnw
+    && chmod 750 $PROJ_DIR_TAG/maven
 
 
-./mvnw clean install -DskipTests=true
+./mvnw clean install -U -DskipTests=true
+#./mvnw clean installl package -T 10
 
 
 ln -s $PROJ_DIR_TAG/target/phase4-scsb-mock-sip-server-2.9.8.jar /etc/init.d/phase4-scsb-mock-sip-server
