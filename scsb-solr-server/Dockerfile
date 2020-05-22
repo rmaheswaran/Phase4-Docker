@@ -1,4 +1,4 @@
-FROM recapscsb/scsb-solr-base:latest
+FROM scsb-solr-base:8.5.1
 MAINTAINER HTC ReCAP Support "recap-support@htcindia.com"
 
 # Get files from GIT using tag
@@ -17,7 +17,7 @@ COPY shellBuild.sh /opt/
 RUN cd /opt && ls -l && ./shellBuild.sh
 
 # Change solr logs directory.
-RUN echo 'SOLR_OPTS="$SOLR_OPTS -Dsolr.log=/var/data/solr-logs"' >> /opt/solr-6.5.0/bin/solr.in.sh
+RUN echo 'SOLR_OPTS="$SOLR_OPTS -Dsolr.log=/var/data/solr-logs"' >> /opt/solr-8.5.1/bin/solr.in.sh
 
 #Add startup.sh
 COPY startup.sh /opt/startup.sh
