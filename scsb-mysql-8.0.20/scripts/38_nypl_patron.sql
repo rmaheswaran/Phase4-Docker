@@ -18,6 +18,12 @@
 --
 -- Table structure for table `patron`
 --
+SET @OLD_UNIQUE_CHECKS = @@UNIQUE_CHECKS, UNIQUE_CHECKS = 0;
+SET @OLD_FOREIGN_KEY_CHECKS = @@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS = 0;
+SET @OLD_SQL_MODE = @@SQL_MODE, SQL_MODE = 'TRADITIONAL';
+
+CREATE SCHEMA IF NOT EXISTS `nypl`;
+USE `nypl`;
 
 DROP TABLE IF EXISTS `patron`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
