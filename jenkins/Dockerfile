@@ -1,4 +1,5 @@
-FROM recapscsb/scsb-base:latest
+#FROM recapscsb/scsb-base:latest
+FROM scsb-base:latest
 MAINTAINER HTC ReCAP Support "recap-support@htcindia.com"
 
 RUN wget -q -O -  http://pkg.jenkins.io/debian/jenkins.io.key | apt-key add - && \

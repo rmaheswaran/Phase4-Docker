@@ -1,4 +1,6 @@
-FROM recapscsb/scsb-base:latest
+#FROM recapscsb/scsb-base:latest
+FROM scsb-base:latest
+
 MAINTAINER HTC ReCAP Support "recap-support@htcindia.com"
 
 ARG TAG
