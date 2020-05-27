@@ -35,7 +35,7 @@ RUN wget \
      "https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_linux-x64_bin.tar.gz" | tar -zx -C /opt/
 
 #ENV JAVA_HOME /opt/jdk1.8.0_51
-ENV JAVA_HOME /opt/jdk1.11
+ENV JAVA_HOME /opt/jdk-11
 ENV PATH $JAVA_HOME/bin:$PATH
 
 RUN echo ${JAVA_HOME}
