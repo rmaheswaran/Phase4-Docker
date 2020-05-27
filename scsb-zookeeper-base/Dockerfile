@@ -1,4 +1,5 @@
-FROM recapscsb/scsb-base:latest
+#FROM recapscsb/scsb-base:latest
+FROM scsb-base:latest
 MAINTAINER HTC ReCAP Support "recap-support@htcindia.com"
 
 ARG GPG_KEY=D0BC8D8A4E90A40AFDFC43B3E22A746A68E327C1
