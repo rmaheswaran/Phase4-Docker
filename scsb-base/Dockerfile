@@ -4,6 +4,8 @@ MAINTAINER HTC Recap Support "recap-support@htcindia.com"
 ENV TERM=xterm
 
 #Set Locale
+RUN apt-get clean && apt-get update && apt-get install -y locales
+
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
@@ -23,21 +25,23 @@ RUN apt-get install -q -y software-properties-common wget curl
 
 RUN apt-get install -qq -y git vim zip
 
-#Install jdk1.8.x
+#Install jdk1.11.x
 RUN wget \
     --no-cookies \
     --no-check-certificate \
-    --header "Cookie: oraclelicense=accept-securebackup-cookie" \
+  #  --header "Cookie: oraclelicense=accept-securebackup-cookie" \
     -qO- \
-    "http://download.oracle.com/otn-pub/java/jdk/8u51-b16/jdk-8u51-linux-x64.tar.gz" | tar -zx -C /opt/
+  #  "http://download.oracle.com/otn-pub/java/jdk/8u51-b16/jdk-8u51-linux-x64.tar.gz" | tar -zx -C /opt/
+     "https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_linux-x64_bin.tar.gz" | tar -zx -C /opt/
 
-ENV JAVA_HOME /opt/jdk1.8.0_51
+#ENV JAVA_HOME /opt/jdk1.8.0_51
+ENV JAVA_HOME /opt/jdk1.11
 ENV PATH $JAVA_HOME/bin:$PATH
 
 RUN echo ${JAVA_HOME}
 
 #Install Gradle
-ENV GRADLE_VERSION 2.6
+ENV GRADLE_VERSION 6.3
 
 RUN mkdir /opt/gradle
 RUN cd /opt/gradle && \
@@ -45,5 +49,5 @@ curl -sLO https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-all
 unzip gradle-${GRADLE_VERSION}-all.zip
 
 
-ENV GRADLE_HOME /opt/gradle/gradle-2.6
+ENV GRADLE_HOME /opt/gradle/gradle-6.3
 ENV PATH $PATH:$GRADLE_HOME/bin
