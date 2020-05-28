@@ -1,7 +1,7 @@
 
 echo "Parameter = $1"
-PROJ_NAME="phase4-scsb-gateway"
-PROJ_DIR="/opt/phase4-scsb-gateway"
+PROJ_NAME="Phase4-SCSB-Gateway"
+PROJ_DIR="/opt/Phase4-SCSB-Gateway"
 PROJ_DIR_TAG=""
 VAR_SLASH="/"
 

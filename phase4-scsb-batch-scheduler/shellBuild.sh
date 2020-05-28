@@ -1,7 +1,7 @@
 
 echo "Parameter = $1"
-PROJ_NAME="phase4-scsb-batch-scheduler"
-PROJ_DIR="/opt/phase4-scsb-batch-scheduler"
+PROJ_NAME="Phase4-SCSB-Batch-Scheduler"
+PROJ_DIR="/opt/Phase4-SCSB-Batch-Scheduler"
 PROJ_DIR_TAG=""
 VAR_SLASH="/"
 
