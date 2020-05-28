@@ -1,5 +1,5 @@
 #FROM recapscsb/scsb-activemq-base:latest
-FROM scsb-activemq-base:latest
+FROM phase4-scsb-activemq-base:latest
 MAINTAINER HTC ReCAP Support "recap-support@htcindia.com"
 
 COPY activemq.xml /opt/activemq/conf

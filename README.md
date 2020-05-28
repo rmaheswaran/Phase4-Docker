@@ -52,14 +52,14 @@ The images available under this Docker repositories are :
 SCSB-BASE is the base image for building SCSB application.This image builds on Ubuntu and installs GIT,JAVA and GRADLE.
 This image will be used as the base image for almost all the other images.
 #### To build scsb-base image :  
-Goto [scsb-base](scsb-base) where the Dockerfile is available and run the below command to build the base image  
+Goto [scsb-base](phase4-scsb-base) where the Dockerfile is available and run the below command to build the base image  
 ```sh
 docker build -t scsb-base .  
 ```
 ### SCSB-MYSQL
-SCSB-MYSQL is an docker image which will install MySQL and all the database schema/scripts needed for SCSB application will be created and maintained [here](scsb-mysql)
+SCSB-MYSQL is an docker image which will install MySQL and all the database schema/scripts needed for SCSB application will be created and maintained [here](phase4-scsb-mysql)
 #### To build the scsb-mysql image :
-Goto to [scsb-mysql](scsb-mysql) and run the below command to build the scbs-mysql image
+Goto to [scsb-mysql](phase4-scsb-mysql) and run the below command to build the scbs-mysql image
 ```sh
 docker build -t scsb-mysql .  
 ```
@@ -70,14 +70,14 @@ docker run --name scsb-mysql -v /data/mysql-data:/var/lib/mysql -p 3306:3306 -d 
 ### SCSB-SOLR-BASE  
 SCSB-SOLR-BASE builds from the base image and installs Apache Solr Server.
 #### To build the scsb-solr-base image :  
-Goto [scsb-solr-base](scsb-solr-base) and run the below command
+Goto [scsb-solr-base](phase4-scsb-solr-base) and run the below command
 ```sh
 docker build -t scsb-solr-base .  
 ```
 ### SCSB-SOLR-SERVER
 Apache solr server configuration files are managed here.
 #### To build the scbs-solr-server image
-Goto to [scsb-solr-server](scsb-solr-server) and the below command
+Goto to [scsb-solr-server](phase4-scsb-solr-server) and the below command
 ```sh
 docker build -t scsb-solr-server .  
 ```
@@ -103,7 +103,7 @@ docker run --name scsb-cas -p ${port} -p ${sslport} -e "DB_HOST=${DB_HOST}" -e "
 SCSB-ACTIVEMQ-BASE image is build from scsb-base image.This image downloads and installs ActiveMQ.
 
 ### To build scsb-activemq-base :
-Goto [scsb-activemq-base](scsb-activemq-base) and run the below command.
+Goto [scsb-activemq-base](phase4-scsb-activemq-base) and run the below command.
 ```sh
 docker build -t scsb-activemq-base .
 ```
