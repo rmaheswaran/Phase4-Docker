@@ -21,6 +21,6 @@ fi
 pwd
 ./gradlew clean build -x test
 
-ln -s $PROJ_DIR_TAG/build/libs/scsb-shiro-0.0.1-SNAPSHOT.jar /etc/init.d/phase4-scsb-auth
-cp $PROJ_DIR_TAG/build/libs/phase4-scsb-auth-0.0.1-SNAPSHOT.jar /opt
+ln -s $PROJ_DIR_TAG/build/libs/Phase4-SCSB-Auth.jar /etc/init.d/phase4-scsb-auth
+cp $PROJ_DIR_TAG/build/libs/Phase4-SCSB-Auth.jar /opt
 

@@ -1,4 +1,4 @@
-FROM scsb-solr-base:8.5.1
+FROM phase4-scsb-solr-base:latest
 MAINTAINER HTC ReCAP Support "recap-support@htcindia.com"
 
 # Get files from GIT using tag

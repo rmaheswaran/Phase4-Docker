@@ -1,5 +1,5 @@
 #FROM recapscsb/scsb-base:latest
-FROM scsb-base:latest
+FROM phase4-scsb-base:latest
 MAINTAINER HTC ReCAP Support "recap-support@htcindia.com"
 
 ARG TAG
@@ -9,4 +9,4 @@ RUN cd /opt && ls -l && ./shellBuild.sh ${envTag}
 
 EXPOSE 9095
 
-ENTRYPOINT java -jar -Denvironment=$ENV /opt/phase4-scsb-circ-0.0.1-SNAPSHOT.jar && bash
+ENTRYPOINT java -jar -Denvironment=$ENV /opt/Phase4-SCSB-Circ.jar && bash
