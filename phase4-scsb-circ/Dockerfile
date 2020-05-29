@@ -9,4 +9,4 @@ RUN cd /opt && ls -l && ./shellBuild.sh ${envTag}
 
 EXPOSE 9095
 
-ENTRYPOINT java -jar -Denvironment=$ENV /opt/Phase4-SCSB-Circ.jar && bash
+ENTRYPOINT java -jar -Denvironment=$ENV /opt/Ppase4-scsb-circ.jar && bash
