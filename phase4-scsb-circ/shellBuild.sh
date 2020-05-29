@@ -20,6 +20,6 @@ fi
 pwd
 ./gradlew clean build -x test
 
-ln -s $PROJ_DIR_TAG/build/libs/Phase4-SCSB-Circ.jar /etc/init.d/phase4-scsb-circ
-cp $PROJ_DIR_TAG/build/libs/Phase4-SCSB-Circ.jar /opt
+ln -s $PROJ_DIR_TAG/build/libs/phase4-scsb-circ.jar /etc/init.d/phase4-scsb-circ
+cp $PROJ_DIR_TAG/build/libs/phase4-scsb-circ.jar /opt
 
