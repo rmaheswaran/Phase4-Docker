@@ -11,7 +11,7 @@ cas:
         sql: SELECT password FROM users WHERE username=? and active=1
         healthQuery: SELECT 1 FROM INFORMATION_SCHEMA.VIEWS
         isolateInternalQueries: false
-        url: jdbc:mysql://replace_your_db_host:3306/recapcas?autoReconnect=true&useSSL=false
+        url: jdbc:mysql://replace_your_db_host:3306/recapcas?autoReconnect=true&useSSL=false&serverTimezone=America/New_York
         failFast: true
         isolationLevelName: ISOLATION_READ_COMMITTED
         leakThreshold: 10
