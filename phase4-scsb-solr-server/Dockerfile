@@ -1,6 +1,6 @@
 FROM phase4-scsb-solr-base:latest
 MAINTAINER HTC ReCAP Support "recap-support@htcindia.com"
-
+RUN apt-get update && apt-get install -y procps
 # Get files from GIT using tag
 ARG TAG
 ENV envTag="$TAG"
