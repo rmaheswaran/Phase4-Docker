@@ -1,5 +1,5 @@
-FROM recapscsb/scsb-base:latest
-#FROM phase4-scsb-base:latest
+#FROM recapscsb/scsb-base:latest
+FROM adoptopenjdk/openjdk8
 MAINTAINER HTC ReCAP Support "recap-support@htcindia.com"
 
 ARG TAG
@@ -7,6 +7,7 @@ ENV envTag="$TAG"
 
 # Create config directory
 RUN mkdir /opt/cas-config
+RUN apt-get update && apt-get install -y git
 
 # Copy config files
 COPY thekeystore /opt/cas-config/thekeystore
