@@ -123,11 +123,11 @@
         <transportConnectors>
             <!-- DOS protection, limit concurrent connections to 1000 and frame size to 1200MB -->
             <transportConnector name="openwire"
-                                uri="tcp://0.0.0.0:61613?maximumConnections=1000&amp;wireFormat.maxFrameSize=max_frame_size"/>
+                                uri="tcp://0.0.0.0:61616?maximumConnections=1000&amp;wireFormat.maxFrameSize=max_frame_size"/>
             <transportConnector name="amqp"
                                 uri="amqp://0.0.0.0:5672?maximumConnections=1000&amp;wireFormat.maxFrameSize=max_frame_size"/>
             <transportConnector name="stomp"
-                                uri="stomp://0.0.0.0:61616?maximumConnections=1000&amp;wireFormat.maxFrameSize=max_frame_size&amp;transport.hbGracePeriodMultiplier=1.5"/>
+                                uri="stomp://0.0.0.0:61613?maximumConnections=1000&amp;wireFormat.maxFrameSize=max_frame_size&amp;transport.hbGracePeriodMultiplier=1.5"/>
             <transportConnector name="mqtt"
                                 uri="mqtt://0.0.0.0:1883?maximumConnections=1000&amp;wireFormat.maxFrameSize=max_frame_size"/>
             <transportConnector name="ws"
